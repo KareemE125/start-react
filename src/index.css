@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --p-color: #2C3E50;
+  --p-dark-color: #1A252F;
+  --s-color: #1ABC9C;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#iDiv{
+  position: relative;
+}
+#iDiv::after, #iDiv::before{
+  content: '';
+  height: 5px;
+  width: 280%;
+  background-color: white;
+  position: absolute;
+  top: 40%;
+  border-radius: 15px;
+}
+
+#iDiv::after{
+  right: 130%;
+}
+
+#iDiv::before{
+  left: 130%;
+}
+
+@media screen and (max-width: 640px) {
+  #iDiv::after, #iDiv::before{
+      width: 180%;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  #iDiv i{
+      font-size: 30px !important;
+  }
+  #iDiv::after, #iDiv::before{
+      width: 80%;
+      top: 30%;
+  }
+  
 }

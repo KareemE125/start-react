@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { Outlet } from 'react-router-dom'
+import Footer from './components/Footer'
+import NavBar from './components/NavBar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+
+export default function App() 
+{
+  useEffect(()=>{
+    const nav = document.getElementsByTagName('nav')[0];
+    document.getElementById('current-page').style.marginTop = `${nav.offsetHeight - 1}px`
+  },[])
+
+  return <>
+    <NavBar/>
+    <div id='current-page'>
+      <Outlet></Outlet>
     </div>
-  );
+    <Footer/>
+    {/* <i className='fa fa-spinner fa-spin'></i> */}
+  </>
 }
-
-export default App;
