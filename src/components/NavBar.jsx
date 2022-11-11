@@ -41,7 +41,7 @@ export default function NavBar() {
     return (
         <Navbar className="navbar navbar-expand-lg navbar-dark p-0 fixed-top"  expand="lg">
             <div className='container-fluid'>
-                <div id='bar'>
+                <div id='bar' className='px-2 px-sm-5'>
                     <Link id='logo' to=''>start react</Link>
                     <Navbar.Toggle id='navBtn' aria-controls="basic-navbar-nav"> 
                         MENU <i className='fa fa-bars'></i>
